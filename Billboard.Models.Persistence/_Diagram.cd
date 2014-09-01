@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Billboard.Models.Persistence.NoteRepositoryExtensions">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NoteRepositoryExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Billboard.Models.Persistence.RepositoryExtensions">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIg=</HashCode>
+      <FileName>RepositoryExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Billboard.Models.Persistence.Configurations.IDbContextModelConfiguration">
+    <Position X="7" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configurations\IDbContextModelConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Billboard.Models.Persistence.IUnitOfWork">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Calibri" Size="9.75" />
+</ClassDiagram>

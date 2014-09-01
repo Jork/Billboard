@@ -1,0 +1,31 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Billboard.Models.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Billboard.Models" #>
+<#@ output extension=".ts" #>
+/// <reference path="../../typings/knockout/knockout.d.ts" />
+
+module Billboard.Models {
+	
+	<# foreach (var type in GetModelTypes()) { #>
+	<# } #>
+
+}
+
+<#+
+
+	// Gets all the model types
+	IEnumerable<Type> GetModelTypes()
+	{
+		return
+			from type in typeof(Billboard.Models.Note).Assembly.GetTypes()
+			where type.IsClass && !type.IsAbstract && !type.IsGenericType && ! type.IsGenericTypeDefinition
+			where typeof(Entity).IsAssignableFrom(type)
+			select type;
+	}
+
+#>

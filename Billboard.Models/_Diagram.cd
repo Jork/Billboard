@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Billboard.Models.Note">
+    <Position X="1" Y="3.25" Width="2" />
+    <Members>
+      <Field Name="_category" Hidden="true" />
+      <Field Name="_creationDateTime" Hidden="true" />
+      <Field Name="_emailAddress" Hidden="true" />
+      <Field Name="_message" Hidden="true" />
+      <Field Name="_price" Hidden="true" />
+      <Field Name="_title" Hidden="true" />
+      <Property Name="EmailAddressEF" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CgAAAAAAAYAABEAAAAEAAAAAAAAABAAAEAAEIgAACAA=</HashCode>
+      <FileName>Note.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Billboard.Models.Category">
+    <Position X="4.25" Y="3.25" Width="2" />
+    <Members>
+      <Field Name="_name" Hidden="true" />
+      <Field Name="_notes" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAwIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Notes" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Billboard.Models.Entity">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_id" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Struct Name="Billboard.Models.EmailAddress">
+    <Position X="7.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_value" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAkgAQAAAAAAAAAAIAAAAAwAAEAAiA=</HashCode>
+      <FileName>EmailAddress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Font Name="Calibri" Size="9.75" />
+</ClassDiagram>

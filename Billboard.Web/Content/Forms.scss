@@ -1,0 +1,60 @@
+﻿@import "Colours.scss";
+@import "Metrics.scss";
+
+form {
+    overflow: visible;
+
+    input, textarea, button {
+        border: solid 2px white;
+        background: $background-color;
+        color: $text-color;
+        margin: $sub-unit;
+        font: $default-font;
+    }
+
+    label {
+        display: block;
+        padding-left: $sub-unit;
+        margin-top: $sub-unit * 2;
+        color: $theme-cyan-color;
+        font: normal 12pt Segoe UI;
+
+        &:after {
+            white-space: pre;
+            content: '\a';
+        }
+    }
+
+    input, textarea {
+        width: 90%;
+        padding: $sub-unit;
+        padding-top: $sub-unit/2;
+        padding-bottom: $sub-unit/2;
+    }
+
+    input {
+        height: $unit;
+    }
+
+    textarea {
+        min-height: $unit * 6;
+    }
+
+    button {
+        min-width: $unit * 5;
+        height: $sub-unit * 6;
+
+        &:hover:not([disabled]) {
+            background: mix( $background-color, $text-color);
+        }
+
+        &[disabled] {
+            border-color: mix( $background-color, $text-color);
+            color: mix( $background-color, $text-color);
+        }
+    }
+
+    .separator {
+        margin-top: $unit * 2;
+    }
+}

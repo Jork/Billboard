@@ -1,0 +1,174 @@
+﻿@import "Colours.scss";
+@import "Metrics.scss";
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    background: $background-color;
+    color: $text-color;
+    font: $default-font;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: $unit + (7-$i) * $sub-unit;
+        font-family: Segoe UI Light;
+
+        @media #{$phone} {
+            font-size: ($sub-unit*2) + (7-$i) * 2;
+        }
+    }
+}
+
+nav {
+    position: absolute;
+    display: inline-block;
+    left: $content-left;
+
+    @media #{$phone} {
+        left: $phone-content-left;
+    }
+
+    top: 0px;
+    height: $margin-top;
+    overflow: visible;
+    right: 0px;
+
+    h1 {
+        line-height: $margin-top - $unit - $sub-unit;
+        position: absolute;
+
+        @media #{$phone} {
+            line-height: $phone-margin-top - $unit;
+        }
+    }
+
+    .local {
+        position: absolute;
+        right: $content-right;
+        top: $margin-top - $unit * 2;
+        padding-left: $unit;
+        padding-bottom: $unit;
+        background: $background-color;
+
+        @media #{$phone} {
+            right: $phone-content-right;
+            top: $phone-margin-top;
+        }
+    }
+
+    .back-button {
+        position: absolute;
+        display: inline-block;
+        left: -$unit * 4;
+        bottom: 0px;
+
+        @media #{$phone} {
+            display: none;
+        }
+    }
+}
+
+.body-outer {
+    position: absolute;
+    left: 0px;
+    top: $content-top;
+    right: 0px;
+    bottom: 0px;
+    overflow: auto;
+
+    @media #{$phone} {
+        top: $phone-content-top;
+    }
+}
+
+.body-scroll-guide {
+    position: absolute;
+    top: 0px;
+    left: $content-left;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    @media #{$phone} {
+        left: $phone-content-left;
+    }
+}
+
+.body-content {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-bottom: $content-bottom;
+    overflow: hidden;
+    right: $content-right;
+
+    @media #{$phone} {
+        margin-bottom: $phone-content-bottom;
+        right: $phone-content-right;
+    }
+}
+
+@import "Tiles.scss";
+
+ul.layout {
+    list-style: none inside none;
+    padding: 0px;
+    width: 100%;
+
+    li {
+        width: 100%;
+    }
+}
+
+symbol {
+    font-family: Segoe UI Symbol;
+}
+
+error {
+    display: block;
+    border: solid 2px $theme-magenta-color;
+    background: mix($theme-magenta-color, $background-color);
+    padding: $sub-unit * 2;
+}
+
+@import "Dialog.scss";
+
+button.circle {
+    width: $unit * 2;
+    height: $unit * 2;
+    border: solid $border-size $text-color;
+    color: $text-color;
+    background: $background-color;
+    border-radius: $unit;
+    font-size: $unit;
+    overflow: visible;
+    margin: 0px;
+    padding: 0px;
+    -webkit-transition: background 0.2S;
+    -moz-transition: background 0.2S;
+    transition: background 0.2S;
+
+    &:hover {
+        background: mix( $background-color, $text-color);
+        -webkit-transition: background 0.2S;
+        -moz-transition: background 0.2S;
+        transition: background 0.2S;
+    }
+
+    :first-child {
+        display: inline-block;
+        width: $unit * 2 - $border-size * 2 - $sub-unit;
+        height: $unit * 2 - $border-size * 2 - $sub-unit;
+        padding: $sub-unit / 2;
+    }
+}
+
+@import "Forms.scss";

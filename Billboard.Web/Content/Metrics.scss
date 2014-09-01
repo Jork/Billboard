@@ -1,0 +1,27 @@
+﻿$sub-unit: 5px;
+$unit: 20px;
+
+$border-size: 3px;
+$font-size: 12pt;
+$default-font: normal $font-size Segoe UI;
+
+$tile-size: $unit * 6;
+
+$margin-top: $unit * 5;
+$margin-left: $unit * 6;
+$content-top: $unit * 7;
+$content-left: $unit * 6;
+$content-bottom: $unit * 3;
+$content-right: $unit * 6;
+
+$phone: "only screen and (max-width: 480px)";
+$not-phone: "all and (min-width: 480px)";
+
+$phone-tile-size: $unit * 4;
+
+$phone-margin-top: $unit;
+$phone-margin-left: $unit;
+$phone-content-top: $unit * 5;
+$phone-content-left: $unit;
+$phone-content-bottom: $unit;
+$phone-content-right: $unit;

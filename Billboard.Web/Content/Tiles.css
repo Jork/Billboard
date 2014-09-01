@@ -1,0 +1,126 @@
+﻿@-moz-keyframes dropTile {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(2.5); }
+
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1); } }
+
+@-webkit-keyframes dropTile {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(2.5); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1); } }
+
+@keyframes dropTile {
+  0% {
+    opacity: 0;
+    transform: scale(2.5); }
+
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+.grid {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .grid .tileColor0 {
+    background-color: #a4c400; }
+  .grid .tileColor1 {
+    background-color: #60a917; }
+  .grid .tileColor2 {
+    background-color: #008a00; }
+  .grid .tileColor3 {
+    background-color: #00aba9; }
+  .grid .tileColor4 {
+    background-color: #1ba1e2; }
+  .grid .tileColor5 {
+    background-color: #0050ef; }
+  .grid .tileColor6 {
+    background-color: #6a00ff; }
+  .grid .tileColor7 {
+    background-color: #aa00ff; }
+  .grid .tileColor8 {
+    background-color: #f472d0; }
+  .grid .tileColor9 {
+    background-color: #d80073; }
+  .grid .tileColor10 {
+    background-color: #a20025; }
+  .grid .tileColor11 {
+    background-color: #e51400; }
+  .grid .tileColor12 {
+    background-color: #fa6800; }
+  .grid .tileColor13 {
+    background-color: #f0a30a; }
+  .grid .tileColor14 {
+    background-color: #e3c800; }
+  .grid .tileColor15 {
+    background-color: #825a2c; }
+  .grid .tile {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin: 2px;
+    border: solid 3px #000;
+    color: #000;
+    -webkit-animation: dropTile 0.5s ease;
+    -moz-animation: dropTile 0.5s ease;
+    animation: dropTile 0.5s ease;
+    -webkit-transition: border-color 0.3s ease, width 0.3s ease;
+    -moz-transition: border-color 0.3s ease, width 0.3s ease;
+    transition: border-color 0.3s ease, width 0.3s ease;
+    overflow: hidden; }
+    @media only screen and (max-width: 480px) {
+      .grid .tile {
+        width: 80px;
+        height: 80px; } }
+    .grid .tile:hover {
+      border-color: #043a6b;
+      -webkit-transition: border-color 0.3s ease;
+      -moz-transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease; }
+    .grid .tile .title {
+      position: absolute;
+      font-size: 17.14286px;
+      height: 27.5px;
+      -ms-text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      left: 10px;
+      bottom: 0px; }
+      @media only screen and (max-width: 480px) {
+        .grid .tile .title {
+          font-size: 11.42857px; } }
+    .grid .tile .count {
+      position: absolute;
+      font-size: 48px;
+      height: 73.33333px;
+      top: 0px;
+      right: 10px; }
+      @media only screen and (max-width: 480px) {
+        .grid .tile .count {
+          font-size: 32px; } }
+    .grid .tile .text {
+      position: absolute;
+      font-size: 17.14286px;
+      left: 10px;
+      right: 10px;
+      top: 5px;
+      bottom: 5px; }
+      @media only screen and (max-width: 480px) {
+        .grid .tile .text {
+          font-size: 11.42857px; } }
+    .grid .tile .price {
+      position: absolute;
+      font-size: 40px;
+      bottom: 0px;
+      right: 10px; }
+      @media only screen and (max-width: 480px) {
+        .grid .tile .price {
+          font-size: 26.66667px; } }

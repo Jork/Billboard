@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<seed>
+	<category name="TechDays 2014">
+		<note title="Source Code" email="source.code@foobar.nl">The source code is freely available at https://billboard.codeplex.com/. It is published under the MIT license.</note>
+		<note title="Live Demo" email="live.demo@foobar.nl">The demo application can be found at: http://billboard.azurewebsites.net/</note>
+	</category>
+	<category name="Electronica">
+		<note title="Surface Pro" email="surface.pro@foobar.nl">Surface Pro te koop wegens aankoop Surface Pro 2. Prijs n.o.t.k.</note>
+		<note title="HTC WP7 Telefoon" price="20" email="wp7@foobar.nl">Oude telefoon ligt stop te happen na de upgrade naar WP8. Iemand interesse?</note>
+		<note title="Laptop" price="100" email="laptop@foobar.nl">Oude laptop met Windows Vista. Nog leuk voor de kinderen.</note>
+		<note title="Nokia Lumia 1520" price="400" email="1520@foobar.nl">Mijn zakken blijken te klein voor deze 'telefoon'. Iemand interesse?</note>
+	</category>
+	<category name="Speelgoed">
+		<note title="Tonka Graafmachine" email="tonka@foobar.nl">Originele gele Tonka graafmachine. Zo vind je ze niet veel meer. Gratis af te halen.</note>
+		<note title="Kinderfiets" price="15" email="kinderfiets@foobar.nl">Rode kinderfiets voor kinderen van 6 á 7 jaar. Zo goed als nieuw.</note>
+		<note title="Lego" email="lego@foobar.nl">Twee dozen met lego. Originele beschrijvingen bijgeleverd.</note>
+	</category>
+	<category name="Inboedel">
+		<note title="Hoekbank" price="50" email="hoekbank@foobar.nl">Gebruikte hoekbank. Slijtplekken maar niet doorgezakt. Nog mooit voor de student :-).</note>
+	</category>
+	<category name="Boeken">
+		<note title="Stam van de Holenbeer" price="50" email="holenbeer@foobar.nl">De hele reeks van de Stam van de Holenbeer. Geen plek voor in mijn huis en heb ze tegenwoordig toch digitaal. p.n.o.t.k.</note>
+		<note title="Gezocht: Kinderboeken" email="kinderboeken@foobar.nl">Gezocht: Kinderboeken. Mijn 10 jarige houd enorm van lezen. Oude kinderboeken over? Ik zie ze graag tegemoet.</note>
+	</category>
+	<category name="Klussen" />
+	<category name="Witgoed" />
+	<category name="Vervoer">
+		<note title="Prius Gezocht" email="prius@foobar.nl">Ik mis mijn oude Prius nog dagelijks. Wie heeft een mooi Prius te koop staan voor een schappelijk prijs?</note>
+	</category>
+</seed>

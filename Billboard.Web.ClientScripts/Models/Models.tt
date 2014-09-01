@@ -1,0 +1,102 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(ProjectDir)bin\Billboard.Models.dll" #>
+<#@ assembly name="$(ProjectDir)bin\Billboard.Web.Models.dll" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Net.Sockets" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Billboard.Web.Models" #>
+<#@ output extension=".ts" #>
+/// <reference path="../helpers/misc.ts" />
+/// <reference path="../helpers/linq.ts" />
+
+module Billboard.Models {
+<# foreach (var model in GetModels()) { #>	
+	export interface IRaw<#= model.Name #>
+	{
+<# foreach(var property in model.GetProperties()) { #>
+		<#= Pascal(property.Name) #>: <#= TypescriptType(property.PropertyType, isRaw: true) #>;
+<# } #>
+	}
+
+	export class <#= model.Name #> implements IModel
+	{
+<# foreach(var property in model.GetProperties()) { #>
+		public <#= Pascal(property.Name) #>: <#= TypescriptType(property.PropertyType, isObservable: !property.Name.EndsWith("Id", StringComparison.OrdinalIgnoreCase)) #>;
+<# } #>
+		
+		constructor(raw: IRaw<#= model.Name #>) {
+<# foreach(var property in model.GetProperties()) { 
+		if( IsEnumerable( property.PropertyType)) { #>
+			this.<#= Pascal(property.Name) #> = ko.observableArray($isUndefined(raw.notes) ? [] : raw.<#= Pascal(property.Name) #>.select(r => new <#= TypescriptType(EnumerableType(property.PropertyType)) #>(r)));
+<#		} else if( property.Name.EndsWith("Id", StringComparison.OrdinalIgnoreCase)) {#>
+			this.<#= Pascal(property.Name) #> = raw.<#= Pascal(property.Name) #>;
+<#		} else {#>
+			this.<#= Pascal(property.Name) #> = ko.observable(raw.<#= Pascal(property.Name) #>);
+<#		}#>
+<# } #>
+		}
+	}
+<# } #> 
+}
+<#+
+
+	IEnumerable<Type> GetModels()
+	{
+		return 
+			from type in typeof(NoteModel).Assembly.GetTypes()
+			where type.IsClass && !type.IsGenericType && !type.IsAbstract && type.Namespace == "Billboard.Web.Models"
+			select type;
+	}
+
+	string Pascal(string name)
+	{
+		if( string.IsNullOrEmpty(name))
+			return String.Empty;
+		
+		StringBuilder sb = new StringBuilder( name.Length );
+		sb.Append(Char.ToLowerInvariant(name[0]));
+		sb.Append(name, 1, name.Length - 1);
+
+		return sb.ToString();
+	}
+
+	string TypescriptType(Type type, bool isRaw = false, bool isObservable = false)
+	{
+		if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Nullable<>))
+			return TypescriptType(Nullable.GetUnderlyingType(type), isRaw: isRaw, isObservable: isObservable);
+
+		if (type == typeof(string))
+			return isObservable ? "KnockoutObservable<string>" : "string";	
+		if (type == typeof(decimal) || type == typeof(int) || type == typeof(long) || type == typeof(float) || type == typeof(double))
+			return isObservable ? "KnockoutObservable<number>" : "number";
+
+		if (isRaw && type.Namespace == "Billboard.Web.Models")
+			return "IRaw" + type.Name;
+
+		var enumType = type.FindInterfaces((t, o) => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>), null).FirstOrDefault();
+		if( enumType != null )
+			if( isObservable )
+				return "KnockoutObservableArray<" + TypescriptType( enumType.GetGenericArguments()[0], isRaw: isRaw, isObservable: isObservable) + ">";
+			else
+				return TypescriptType( enumType.GetGenericArguments()[0], isRaw: isRaw, isObservable: isObservable) + "[]";
+
+		return type.Name;
+	}
+
+	Type EnumerableType(Type type)
+	{
+		var enumType = type.FindInterfaces((t, o) => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>), null).First();
+		return enumType.GetGenericArguments()[0];
+	}
+
+	bool IsEnumerable(Type type)
+	{
+		if (type == typeof(string))
+			return false;
+		return type.FindInterfaces((t, o) => t.IsGenericType && t.GetGenericTypeDefinition() == typeof(IEnumerable<>), null).Any();
+	}
+
+#>

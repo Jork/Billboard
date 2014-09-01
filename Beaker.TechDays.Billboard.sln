@@ -1,0 +1,92 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Models", "Billboard.Models\Billboard.Models.csproj", "{2FBC0928-A4E0-4862-A4A1-D09C4AFA576B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Models.Specs", "Billboard.Models.Specs\Billboard.Models.Specs.csproj", "{16045462-0A65-4805-938B-F3C2E2EFBE5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Models.Persistence", "Billboard.Models.Persistence\Billboard.Models.Persistence.csproj", "{70019E5D-64FB-476B-B9F4-47E18E3D5AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Web", "Billboard.Web\Billboard.Web.csproj", "{25539D40-A5D8-47AD-8FAE-C2C261BA41A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A951D5E3-6FCB-4923-B96C-13B6C3C25153} = {A951D5E3-6FCB-4923-B96C-13B6C3C25153}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Web.Specs", "Billboard.Web.Specs\Billboard.Web.Specs.csproj", "{5E74A501-F96D-4A7F-AFDE-59B520255717}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7800F17-5154-43FA-AFD9-7EA073AE5349}"
+	ProjectSection(SolutionItems) = preProject
+		WebEssentials-Settings.json = WebEssentials-Settings.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Web.Models", "Billboard.Web.Models\Billboard.Web.Models.csproj", "{47B32010-6507-4351-9262-509A8F9E64EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billboard.Web.ClientScripts", "Billboard.Web.ClientScripts\Billboard.Web.ClientScripts.csproj", "{A951D5E3-6FCB-4923-B96C-13B6C3C25153}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs31
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Billboard.Models\\Billboard.Models.csproj
+		SccProjectName1 = Billboard.Models
+		SccLocalPath1 = Billboard.Models
+		SccProjectUniqueName2 = Billboard.Models.Specs\\Billboard.Models.Specs.csproj
+		SccProjectName2 = Billboard.Models.Specs
+		SccLocalPath2 = Billboard.Models.Specs
+		SccProjectUniqueName3 = Billboard.Models.Persistence\\Billboard.Models.Persistence.csproj
+		SccProjectName3 = Billboard.Models.Persistence
+		SccLocalPath3 = Billboard.Models.Persistence
+		SccProjectUniqueName4 = Billboard.Web\\Billboard.Web.csproj
+		SccProjectName4 = Billboard.Web
+		SccLocalPath4 = Billboard.Web
+		SccProjectUniqueName5 = Billboard.Web.Specs\\Billboard.Web.Specs.csproj
+		SccProjectName5 = Billboard.Web.Specs
+		SccLocalPath5 = Billboard.Web.Specs
+		SccProjectUniqueName6 = Billboard.Web.Models\\Billboard.Web.Models.csproj
+		SccProjectName6 = Billboard.Web.Models
+		SccLocalPath6 = Billboard.Web.Models
+		SccProjectUniqueName7 = Billboard.Web.ClientScripts\\Billboard.Web.ClientScripts.csproj
+		SccProjectName7 = Billboard.Web.ClientScripts
+		SccLocalPath7 = Billboard.Web.ClientScripts
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FBC0928-A4E0-4862-A4A1-D09C4AFA576B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FBC0928-A4E0-4862-A4A1-D09C4AFA576B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FBC0928-A4E0-4862-A4A1-D09C4AFA576B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FBC0928-A4E0-4862-A4A1-D09C4AFA576B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16045462-0A65-4805-938B-F3C2E2EFBE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16045462-0A65-4805-938B-F3C2E2EFBE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16045462-0A65-4805-938B-F3C2E2EFBE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16045462-0A65-4805-938B-F3C2E2EFBE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70019E5D-64FB-476B-B9F4-47E18E3D5AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70019E5D-64FB-476B-B9F4-47E18E3D5AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70019E5D-64FB-476B-B9F4-47E18E3D5AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70019E5D-64FB-476B-B9F4-47E18E3D5AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25539D40-A5D8-47AD-8FAE-C2C261BA41A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25539D40-A5D8-47AD-8FAE-C2C261BA41A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25539D40-A5D8-47AD-8FAE-C2C261BA41A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25539D40-A5D8-47AD-8FAE-C2C261BA41A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E74A501-F96D-4A7F-AFDE-59B520255717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E74A501-F96D-4A7F-AFDE-59B520255717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E74A501-F96D-4A7F-AFDE-59B520255717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E74A501-F96D-4A7F-AFDE-59B520255717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B32010-6507-4351-9262-509A8F9E64EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B32010-6507-4351-9262-509A8F9E64EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B32010-6507-4351-9262-509A8F9E64EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B32010-6507-4351-9262-509A8F9E64EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A951D5E3-6FCB-4923-B96C-13B6C3C25153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A951D5E3-6FCB-4923-B96C-13B6C3C25153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A951D5E3-6FCB-4923-B96C-13B6C3C25153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A951D5E3-6FCB-4923-B96C-13B6C3C25153}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+﻿@using Billboard.Web.Models
+@model CategoryModel
+@{
+    ViewBag.Title = Model.Name;
+}
+<div class="grid" data-bind="foreach: notes">
+	<div class="tile" data-bind="click: function() { select( $data ); }, css: Billboard.View.textCssColor( model.title() )">
+		<div class="text" data-bind="text: model.title"></div>
+		<div class="price" data-bind="text: formattedPrice"></div>
+	</div>
+</div>
+
+@section navigation
+{
+	<button class="circle" title="Nieuwe notitie" data-bind="click: addNew"><symbol></symbol></button>
+}

@@ -1,0 +1,30 @@
+﻿@using Billboard.Web.Models
+@model IEnumerable<CategoryModel>
+@{
+	ViewBag.Title = "Categorieën";
+}
+<div class="grid" data-bind="foreach: { data: categories, beforeRemove: Billboard.View.widthCollapseRemove }">
+	<div class="tile" data-bind="click: function() { $parent.select( $data ); }, css: Billboard.View.textCssColor( name() )">
+		<div class="title" data-bind="text: name"></div>
+		<div class="count" data-bind="text: noteCount"></div>
+	</div>
+</div>
+
+@section navigation
+{	
+	<button class="circle" title="Nieuwe categorie" data-bind="click: addNew"><symbol></symbol></button>
+}
+@section dialog
+{
+	<form>
+		<ul class="layout">
+			<li>
+				<label>Naam nieuwe categorie:</label>
+				<input type="text" data-bind="value: categoryName" />
+			</li>
+			<li class="separator">
+				<button data-bind="click: addNewOk">Ok</button> <button data-bind="click: addNewCancel">Cancel</button>
+			</li>
+		</ul>
+	</form>
+}

@@ -1,0 +1,91 @@
+﻿@import "Colours.scss";
+@import "Metrics.scss";
+
+@-moz-keyframes FadeBackIn {
+    0% {
+        background-color: transparentize( $text-color, 1 );
+    }
+
+    100% {
+        background-color: transparentize( $text-color, 0.5 );
+    }
+}
+
+@-webkit-keyframes FadeBackIn {
+    0% {
+        background-color: transparentize( $text-color, 1 );
+    }
+
+    100% {
+        background-color: transparentize( $text-color, 0.5 );
+    }
+}
+
+@keyframes FadeBackIn {
+    0% {
+        background-color: transparentize( $text-color, 1 );
+    }
+
+    100% {
+        background-color: transparentize( $text-color, 0.5 );
+    }
+}
+
+@keyframes FadeBarIn {
+    0% {
+        background-color: transparentize( $background-color, 1 );
+    }
+
+    100% {
+        background-color: $background-color;
+    }
+}
+
+.dialog-back {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    display: none;
+
+    &.visible {
+        display: block;
+        background-color: transparentize( $text-color, 0.5 );
+        -moz-animation: fadeBackIn 0.2s ease-out;
+        -webkit-animation: fadeBackIn 0.2s ease-out;
+        animation: fadeBackIn 0.2s ease-out;
+
+        .dialog-bar-positioner {
+            .dialog-bar {
+                -moz-animation: fadeBarIn 0.5s ease-out;
+                -webkit-animation: fadeBarIn 0.5s ease-out;
+                animation: fadeBarIn 0.5s ease-out;
+            }
+        }
+    }
+
+    .dialog-bar-positioner {
+        display: block;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+
+        .dialog-bar {
+            display: block;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: -50%;
+            background: $background-color;
+            padding: $unit * 2;
+            padding-left: $content-left;
+            padding-right: $content-right;
+
+            @media #{$phone} {
+                padding-left: $phone-content-left;
+                padding-right: $phone-content-right;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+﻿@using System.Collections
+@using Billboard.Web.Helpers
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - Billboard</title>
+	@Scripts.Render("~/bundles/libraries")
+	@Scripts.Render("~/bundles/billboard")
+	@Styles.Render("~/bundles/style")
+	@RenderSection("scripts", required: false)
+	<script type="application/json" id="startupJson">
+		@if (Model != null)
+		{ <text>@Html.ToJson(
+		new
+		{
+			viewModelName = (Model is IEnumerable
+				? ((IEnumerable)Model).AsQueryable().ElementType.Name.Replace("Model", "ListViewModel")
+				: Model.GetType().Name.Replace("Model", "ViewModel")),
+			model = Model
+		})</text> }
+	</script>
+</head>
+<body>
+	<nav>
+		<h1>@ViewBag.Title</h1>
+		<button class="circle back-button" title="" data-bind="visible: canGoBack(), click: goBack"><symbol></symbol></button>
+		<div class="local">
+			@RenderSection("navigation", required: false)
+		</div>
+	</nav>
+	<div class="body-outer">
+		<div class="body-scroll-guide">
+			<div class="body-content">
+				@RenderBody()
+			</div>
+		</div>
+	</div>
+	<div class="dialog-back" data-bind="css: { visible: isBarVisible }">
+		<div class="dialog-bar-positioner">
+			<div class="dialog-bar">
+				@RenderSection("dialog", required: false)
+			</div>
+		</div>
+	</div>
+</body>
+</html>

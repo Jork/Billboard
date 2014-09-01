@@ -1,0 +1,44 @@
+﻿@using Billboard.Web.Models
+@model NoteModel
+@{
+	ViewBag.Title = Model.Title;
+}
+
+<form>
+	<error data-bind="visible: hasError"><symbol></symbol> <span data-bind="text: errorText"></span></error>
+	<ul class="layout">
+		<li>
+			<label for="title">Titel</label>
+			<input type="text" id="title" data-bind="value: model.title" />
+		</li>
+		<li>
+			<label for="message">Bericht</label>
+			<textarea id="message" data-bind="value: model.message"></textarea>
+		</li>
+		<li>
+			<label for="price">Bedrag in € (optioneel)</label>
+			<input type="text" id="price" data-bind="value: formattedPrice"/>
+		</li>
+		<li>
+			<label for="email">Email</label>
+			<input type="email" id="email" data-bind="value: model.email" />
+		</li>
+		<li class="separator">
+			<button data-bind="click: save, enable: canSave">Ok</button><button data-bind="click: cancel">Cancel</button>
+		</li>
+	</ul>
+</form>
+
+@section navigation
+{
+	<button class="circle" data-bind="click: askDelete"><symbol></symbol></button>
+}
+
+@section dialog
+{
+	<p>Weet u zeker dat u deze notitie met de naam: '<span data-bind="text: model.title"></span>' wilt verwijderen?</p>
+	<form>
+		<button data-bind="click: confirmDelete">Verwijder</button>
+		<button data-bind="click: abortDelete">Annuleer</button>
+	</form>
+}
